@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"hello/customer"
+	"hello/person"
 	"unicode/utf8"
 )
 
@@ -12,16 +13,16 @@ func main() {
 	a := "กขค"
 	B := "abc"
 	C := "123"
-	println("abc นับความยาวของ string แบบ ภาษาอังกฤษและตัวเลข ", len(B) ," นับด้วย Builtin func len(B) ได้ ตรง")
-	println("123 นับความยาวของ string แบบ ภาษาอังกฤษและตัวเลข ", len(C) ," นับด้วย Builtin func len(C) ได้ ตรง")
+	println("abc นับความยาวของ string แบบ ภาษาอังกฤษและตัวเลข ", len(B), " นับด้วย Builtin func len(B) ได้ ตรง")
+	println("123 นับความยาวของ string แบบ ภาษาอังกฤษและตัวเลข ", len(C), " นับด้วย Builtin func len(C) ได้ ตรง")
 
-	println("กขค นับความยาวของ string แบบ ภาษาอังกฤษและตัวเลข ", len(a) ," นับด้วย Builtin func len(a) จะไม่ตรง -กขค- ความยาวต้องเป็น 3")
+	println("กขค นับความยาวของ string แบบ ภาษาอังกฤษและตัวเลข ", len(a), " นับด้วย Builtin func len(a) จะไม่ตรง -กขค- ความยาวต้องเป็น 3")
 	println("กขค นับความยาวของ string แบบ ภาษาไทยให้ตรง => ", utf8.RuneCountInString(a), " นับด้วย Builtin func utf8.RuneCountInString(a) ได้ ถูกต้อง")
 
 	// short declaration
-	x:= 10
+	x := 10
 	//OR | var x int = 10
-	// OR | var x = 10 
+	// OR | var x = 10
 
 	y := true
 	// var y bool
@@ -29,14 +30,14 @@ func main() {
 	z := "Hello World"
 	// var z string
 
-	fmt.Println(x )
-	fmt.Println(y )
-	fmt.Println(z )
-	fmt.Println(x )
+	fmt.Println(x)
+	fmt.Println(y)
+	fmt.Println(z)
+	fmt.Println(x)
 
 	println()
 	println()
-// ----------------- If-Else condition ------------------------------------
+	// ----------------- If-Else condition ------------------------------------
 	point := 50
 
 	if point >= 50 {
@@ -53,36 +54,36 @@ func main() {
 
 	}
 
-// --------------------- Array -----------------------------------------------
+	// --------------------- Array -----------------------------------------------
 	// array fix ความยาว
-	var c [3]int = [3]int{10,20,30}
+	var c [3]int = [3]int{10, 20, 30}
 	var d [3]bool = [3]bool{}
 
-	// or 
+	// or
 
-	e := [...]int{10,20,30,40,50}
-	
+	e := [...]int{10, 20, 30, 40, 50}
+
 	fmt.Println(c)
 	fmt.Println(d)
-	fmt.Printf("%#v",e)
+	fmt.Printf("%#v", e)
 	println()
-	fmt.Printf("%v",e)
+	fmt.Printf("%v", e)
 	println()
 
-// -------------------------- Slide --------------------------------------
+	// -------------------------- Slide --------------------------------------
 	//go lang เรียก slide ภาษาอื่น เรียก list
 	// slide ไม่ fix ความยาว
 	// index    0  1  2  3  4
-	f := []int{10,20,30,40,50}
+	f := []int{10, 20, 30, 40, 50}
 	// เพิ่มข้อมูลต่อท้าย slide
 	f = append(f, 60)
 	// index  0  1  2  3  4  5
 	// []int{10,20,30,40,50,60}
 	g := f
 
-	fmt.Printf("%v",f)
+	fmt.Printf("%v", f)
 	println()
-	fmt.Printf("%v",g)
+	fmt.Printf("%v", g)
 	println()
 
 	// sub slide ตั้งแต่ index 3 to ตัวสุดท้ายของ slide
@@ -97,18 +98,18 @@ func main() {
 	fmt.Printf("%v", f[:3])
 	println()
 
-// ------------------------- Map ------------------------------------------------
+	// ------------------------- Map ------------------------------------------------
 	// การใช้ map ภาษาอื่น เรียก dictionary (การใช้งาน แบบ Key, value)
-	// ประกาศตัวแปรแบบเต็ม 
+	// ประกาศตัวแปรแบบเต็ม
 	// var h map[string]string = map[string]string{}
 
 	// short declaration
 	h := map[string]string{}
 
-	// key        value    
+	// key        value
 	h["th"] = "Thailand"
 	h["us"] = "United States"
-	
+
 	println("th", h["th"])
 	println("us", h["us"])
 
@@ -133,7 +134,7 @@ func main() {
 		println("No value")
 	}
 
-// ----------------------------- For Loop -----------------------------------------
+	// ----------------------------- For Loop -----------------------------------------
 
 	sum := 0
 	for i := 0; i <= 5; i++ {
@@ -141,7 +142,7 @@ func main() {
 	}
 	println("Sum =", sum)
 
-	// for each 
+	// for each
 	sum2 := 0
 	k := []int{1, 2, 3, 4, 5}
 
@@ -157,9 +158,9 @@ func main() {
 		sum3 += v
 		sumIndex += index
 	}
-	println("Index = ", sumIndex," Sum2 = ", sum3)
+	println("Index = ", sumIndex, " Sum2 = ", sum3)
 
-	// กรณีที่ loop แบบ for each (range) จะ return two pole values มา 2 ตัว (1 ค่าของ index, 2 ค่าของ value) แต่ไม่ต้องการ index ต้องการแค่ค่า value ของ slide อย่างเดียว 
+	// กรณีที่ loop แบบ for each (range) จะ return two pole values มา 2 ตัว (1 ค่าของ index, 2 ค่าของ value) แต่ไม่ต้องการ index ต้องการแค่ค่า value ของ slide อย่างเดียว
 	// สามารถทำการ ignore ตัว index ได้ (สามารถ ignore ได้ทั้ง index และ value แล้วแต่ว่าเราต้องการอะไร)
 	// ignore โดยการใส่ เครื่องหมาย _ เอาไว้ ( _ คือ Blank Declaration )
 	sum4 := 0
@@ -168,12 +169,11 @@ func main() {
 	}
 	println(" Sum4 = ", sum4)
 
-
-// ------------------ Pointer ------------------------------------------------------------------------------------------------
+	// ------------------ Pointer ------------------------------------------------------------------------------------------------
 
 	l := 10
 	var m int = 10
-	
+
 	// ดึงตำแหน่ง address ของ l ออกมาดู
 	println(&l)
 	println("ตำแหน่ง m ใน memory ", &m)
@@ -182,55 +182,72 @@ func main() {
 	println(l)
 	println(m)
 
-	// ให้ n เป็น pointer เก็บตำแหน่งของ int 
-	// และชี้ไปยังตำแหน่งของ m 
+	// ให้ n เป็น pointer เก็บตำแหน่งของ int
+	// และชี้ไปยังตำแหน่งของ m
 	// var n *int
-	// ให้ n เก็บตำแหน่งของ m 
+	// ให้ n เก็บตำแหน่งของ m
 	n := &m
 	println("เอาข้อมูล value ออกมาดู ", *n)
 	println("เอาตำแหน่งของตัวเองใน memory ออกมาดู ", &n)
 	println("เอาตำแหน่งของ m ใน memory ที่ n ชี้ referace ออกมาดู", n)
 
 	// ในกรณีที่ เราเปลี่ยนค่าของ n หรือ m ค่าข้อมูลจะเปลี่ยนทั้งคู่ เพราะ n และ m อ้างถึงตำแหน่งเก็บข้อมูลเดียวกัน
-	*n = 25 
+	*n = 25
 	println("หลังจากเปลี่ยนค่า n เอาค่า n ออกมาดู ", *n)
-	println("หลังจากเปลี่ยนค่า n เอาค่า m ออกมาดู " , m)
+	println("หลังจากเปลี่ยนค่า n เอาค่า m ออกมาดู ", m)
 
-// ------------------------- function -------------------------------------------------------
+	/// -------------------- struct ---------------------------------------------------------------
+	// มีแต่ feild ไม่มี function
+	// ถ้าเขียนแบบบรรทัดเดียวไม่จำเป็นต้องมี (,) ทุกตัว
+	// st := Person{Name: "charan", Surname: "detkrathok"}
+
+	// แต่ถ้าจะเขียนในรูปแบบขึ้นบรรทัดใหม่แบบด่านล่างนี้ ตัวสุดท้ายต้องมี (,) ปิดท้ายเสมอ ( .... Surname: "detkrathok",} )
+	st := person.Person{}
+
+	st.SetName("charan")
+	st.SetSurname("detkrathok")
+
+	println("STRUCT = ", st.GetName(), st.GetSurname())
+	fmt.Printf("%#v", st.GetName())
+	println()
+
+	// ------------------------- function -------------------------------------------------------
 	helloeWorld := hello("World")
 	println(helloeWorld)
 
-	result := funcName("Charan","Detkrathok")
+	result := funcName("Charan", "Detkrathok")
 	println(result)
 
-	o := []int{10,20,30}
+	o := []int{10, 20, 30}
 	resultSum := sumNumber(o)
 	println(resultSum)
 
-	resultSumVariadic := sumVariadic(10,20,30)
+	resultSumVariadic := sumVariadic(10, 20, 30)
 	println(resultSumVariadic)
 
 	// Anonymous function
 	// var p func(int, int) int
 	/* Or
-		p := func(a, b int) int { 
-			return a + b
-		}
+	p := func(a, b int) int {
+		return a + b
+	}
 	*/
 
 	p := sumAnonymous
-	println(p(10,20))
+	println(p(10, 20))
 
-	// ทำการส่ง function เข้าไปใน call func 
+	// ทำการส่ง function เข้าไปใน call func
 	call(add)
 	call(sub)
 
-// ----------------------------- เรียกใช้งานต่าง package -------------------------------------
-	// เรียก function Hello จาก package customer 
+	// ----------------------------- เรียกใช้งานต่าง package -------------------------------------
+	// เรียก function Hello จาก package customer
 	// โดย function Hello กำหนดตัวเเรกเป็น - ตัวใหญ่ H - เพื่อทำการ expose function ให้ภายนอก package customer เรียกใช้ได้
 
-	callCustomerPackage := customer.Hello("charan")
+	customer.OtherName = "charan detkrathok"
+	callCustomerPackage := customer.Hello()
 	println(callCustomerPackage)
+
 }
 
 // ------------------------- function -------------------------------------------------------
@@ -270,7 +287,7 @@ func sumAnonymous(a, b int) int {
 	return a + b
 }
 
-func call( f func(int,int) int) {
+func call(f func(int, int) int) {
 	sum := f(50, 10)
 	println(sum)
 }
